@@ -3,10 +3,11 @@ using JSON
 const subdir = "gen"
 
 
-function main()
-    @info "Working dir" pwd()
-
+function read_metadata_version()
+    """Check working dir, read metadata version.
+    """
     metadata_version = ""
+
     try
         metadata_version = read(joinpath("gen", "version.txt"), String)
         metadata_version = strip(metadata_version)
@@ -17,9 +18,17 @@ function main()
     end
     if isempty(metadata_version)
         @error "Cannot read win32metadata.json version!"
-        return -1
+        exit(-1)
     end
     @info "win32metadata.json version" metadata_version
+
+    metadata_version
+end
+
+function main()
+    @info "Working dir" pwd()
+
+    metadata_version = read_metadata_version()
 
 end
 
