@@ -1,0 +1,13 @@
+name = "Win32"
+uuid = "7df3f128-d9e8-4138-9822-c6975a3cd2b0"
+authors = ["Chengyu HAN <cyhan.dev@outlook.com> and contributors"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
